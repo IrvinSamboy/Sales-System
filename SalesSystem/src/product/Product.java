@@ -3,7 +3,7 @@ package product;
 public class Product {
     private static int ProductCount;
     private String productName;
-    private int idProduct;
+    private final int idProduct;
     private double price;
 
     public Product() {
@@ -29,5 +29,14 @@ public class Product {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    @Override
+    public java.lang.String toString() {
+        return "Product{" +
+                "productName='" + this.productName + '\'' +
+                ", idProduct=" + this.idProduct +
+                ", price=" + this.price +
+                '}';
     }
 }
