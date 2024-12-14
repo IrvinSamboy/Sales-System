@@ -16,7 +16,7 @@ public class Order {
     }
 
     public void addProduct(Product product) {
-        if(productCounter <= MAx_PRODUCTS){
+        if(this.productCounter <= MAx_PRODUCTS){
             this.products[this.productCounter++] = product;
         }
         else {
@@ -24,5 +24,22 @@ public class Order {
         }
     }
 
-    
+    public double calcTotal() {
+        double total = 0;
+        for (int i=0; i<=this.productCounter; i++){
+            total += this.products[i].getPrice();
+        }
+
+        return total;
+    }
+
+    public void showOrder() {
+        System.out.println("OrderId: " + this.idOrder);
+        double orderTotal = calcTotal();
+        System.out.println("Total order = " + orderTotal);
+        System.out.println("Products = " + orderTotal);
+        for (int i=0; i<=this.productCounter; i++) {
+            System.out.println(this.products[i].toString());
+        }
+    }
 }
